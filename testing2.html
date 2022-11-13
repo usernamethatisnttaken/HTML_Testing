@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<body>
+    <div id="clock1">0:00:00</div>
+
+    <script>
+        let time = new Date();
+        let startHour = time.getHours();
+        let startMin = time.getMinutes();
+        //let startSec = time.getSec();
+        setInterval(countTime, 1000);
+        function countTime(){
+            const time_pre = 'Total time with Pantree: '
+            let time = new Date();
+            let hour = time.getHours() - startHour;
+            let min = time.getMinutes() - startMin;
+            let sec = time.getSeconds();
+
+            if (hour < 10) {
+                hour = "0" + hour;
+            }
+            if (min < 10) {
+                min = "0" + min;
+            }
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+
+            let currentTick = hour + ":" + min + ":" + sec;
+
+            document.getElementById("clock1")
+                .innerHTML = currentTime;
+        }
+
+        countTime();
+    </script>
+</body>
